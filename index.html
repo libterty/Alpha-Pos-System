@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AlphaPos</title>
+    <!-- import bootstrap style -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- import AlphaPos stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-center text-light pt-4">Alpha Pos System</h2>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item bverage">
+                <a class="nav-link active" id="bverage-tab" data-toggle="tab" href="#bverage" role="tab" aria-controls="bverage" aria-selected="true">Bverages</a>
+            </li>
+            <li class="nav-item snack">
+                <a class="nav-link" id="snack-tab" data-toggle="tab" href="#snack" role="tab" aria-controls="snack" aria-selected="false">Snacks</a>
+            </li>
+        </ul>
+        <div class="row" role="tabpanel" aria-labelledby="bverage-tab">
+            <!-- left side order list -->
+            <div class="col-md-4 p-4" data-order-lists>
+                <div class="card mb-3">
+                    <div class="card-body pt-3 pr-3">
+                        <div class="text-right">
+                            <span data-alpha-pos="delete-item">×</span>
+                        </div>
+                        <h6 class="card-title mb-1">Black Tea</h6>
+                        <div class="card-text">Less Ice</div>
+                        <div class="card-text">Half Sugar</div>
+                    </div>
+                    <div class="card-footer text-right py-2">
+                        <div class="card-text text-muted">$ <span data-item-price>30</span></div>
+                    </div>
+                </div>
+
+                <div class="text-right">
+                    <button class="btn btn-light" style="min-width:120px;" data-alpha-pos="checkout">Checkout</button>
+                    <button class="btn btn-light" style="min-width:120px;" data-alpha-pos="clearorder">Clear Order</button>
+                </div>
+            </div>
+            <!-- /left side order list-->
+
+            <!-- right side menu -->
+            <div class="col-md-8 p-4" id="bverage" data-order-panel>
+                <section class="menu mb-4">
+                    <div class="card-deck mb-3">
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                                <h5 class="card-title">Black Tea</h5>
+                                <input type="radio" name="drink" value="Black Tea">
+                            </label>
+                        </div>
+
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                                <h5 class="card-title">Oolong Tea</h5>
+                                <input type="radio" name="drink" value="Oolong Tea">
+                            </label>
+                        </div>
+
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                                <h5 class="card-title">Baozong Tea</h5>
+                                <input type="radio" name="drink" value="Baozong Tea">
+                            </label>
+                        </div>
+
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                                <h5 class="card-title">Green Tea</h5>
+                                <input type="radio" name="drink" value="Green Tea">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card-deck mb-3">
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                                <h5 class="card-title">Bubble Milk Tea</h5>
+                                <input type="radio" name="drink" value="Bubble Milk Tea">
+                            </label>
+                        </div>
+
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                                <h5 class="card-title">Black Tea Latte</h5>
+                                <input type="radio" name="drink" value="Black Tea Latte">
+                            </label>
+                        </div>
+
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                                <h5 class="card-title">Lemon Green</h5>
+                                <input type="radio" name="drink" value="Lemon Green Tea">
+                            </label>
+                        </div>
+
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                                <h5 class="card-title">Matcha Latte</h5>
+                                <input type="radio" name="drink" value="Matcha Latte">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card-deck">
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                                <h5 class="card-title">Americano</h5>
+                                <input type="radio" name="drink" value="Americano">
+                            </label>
+                        </div>
+
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                                <h5 class="card-title">Caffee Latte</h5>
+                                <input type="radio" name="drink" value="Caffee Latte">
+                            </label>
+                        </div>
+
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                                <h5 class="card-title">Mocha</h5>
+                                <input type="radio" name="drink" value="Mocha">
+                            </label>
+                        </div>
+
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                                <h5 class="card-title">Macchiato</h5>
+                                <input type="radio" name="drink" value="Macchiato">
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="ice mb-4">
+                    <label class="d-block text-light">Ice</label>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-outline-primary">
+                            <input type="radio" name="ice" value="No Ice" />No
+                        </label>
+                        <label class="btn btn-outline-primary">
+                            <input type="radio" name="ice" value="Less Ice" />Less
+                        </label>
+                        <label class="btn btn-outline-primary active">
+                            <input type="radio" name="ice" value="Regular Ice" checked="checked" />Regular
+                        </label>
+                    </div>
+                </section>
+
+                <section class="sugar mb-4">
+                    <label class="d-block text-light">Sugar</label>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-outline-info">
+                            <input type="radio" name="sugar" value="No Sugar" />No
+                        </label>
+                        <label class="btn btn-outline-info">
+                            <input type="radio" name="sugar" value="A Little Sugar" />A Little
+                        </label>
+                        <label class="btn btn-outline-info">
+                            <input type="radio" name="sugar" value="Half Sugar" />Half
+                        </label>
+                        <label class="btn btn-outline-info">
+                            <input type="radio" name="sugar" value="Less Sugar" />Less
+                        </label>
+                        <label class="btn btn-outline-info active">
+                            <input type="radio" name="sugar" value="Regular Sugar" checked="checked" />Regular
+                        </label>
+                    </div>
+                </section>
+
+                <div class="text-right">
+                    <div class="btn btn-light" style="min-width:120px;" data-alpha-pos="add-drink">Add</div>
+                </div>
+            </div>
+
+            <div class="col-md-8 p-4" id="snack" style="display: none" data-order-panel>
+                <section class="menu mb-4">
+                    <div class="card-deck mb-3">
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                            <h5 class="card-title">Hamburger</h5>
+                            <input type="radio" name="snack" value="Hamburger">
+                        </label>
+                        </div>
+
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                            <h5 class="card-title">French Fries</h5>
+                            <input type="radio" name="snack" value="French Fries">
+                        </label>
+                        </div>
+
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                            <h5 class="card-title">Pop corn</h5>
+                            <input type="radio" name="snack" value="Pop corn">
+                        </label>
+                        </div>
+
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                            <h5 class="card-title">Waffles</h5>
+                            <input type="radio" name="snack" value="Waffles">
+                        </label>
+                        </div>
+                    </div>
+
+                    <div class="card-deck mb-3">
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                            <h5 class="card-title">Pan Cake</h5>
+                            <input type="radio" name="snack" value="Pan Cake">
+                        </label>
+                        </div>
+
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                            <h5 class="card-title">Cheese Burger</h5>
+                            <input type="radio" name="snack" value="Cheese Burger">
+                        </label>
+                        </div>
+
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                            <h5 class="card-title">Double Cheese Burger</h5>
+                            <input type="radio" name="snack" value="Double Cheese Burger">
+                        </label>
+                        </div>
+
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                            <h5 class="card-title">Burrito</h5>
+                            <input type="radio" name="snack" value="Burrito">
+                        </label>
+                        </div>
+                    </div>
+
+                    <div class="card-deck">
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                            <h5 class="card-title">Chicken Burrito</h5>
+                            <input type="radio" name="snack" value="Chicken Burrito">
+                        </label>
+                        </div>
+
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                            <h5 class="card-title">Beef Burrito</h5>
+                            <input type="radio" name="snack" value="Beef Burrito">
+                        </label>
+                        </div>
+
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                            <h5 class="card-title">Salad</h5>
+                            <input type="radio" name="snack" value="Salad">
+                        </label>
+                        </div>
+
+                        <div class="card text-center">
+                            <label class="card-body px-2">
+                            <h5 class="card-title">Daily Soup</h5>
+                            <input type="radio" name="snack" value="Daily Soup">
+                        </label>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="spicy mb-4">
+                    <label class="d-block text-light">Spicy</label>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-outline-primary">
+                        <input type="radio" name="spicy" value="No spicy" />No
+                    </label>
+                        <label class="btn btn-outline-primary">
+                        <input type="radio" name="spicy" value="Less spicy" />Less
+                    </label>
+                        <label class="btn btn-outline-primary active">
+                        <input type="radio" name="spicy" value="Regular spicy" checked="checked" />Regular
+                    </label>
+                    </div>
+                </section>
+
+                <div class="text-right">
+                    <div class="btn btn-light" style="min-width:120px;" data-alpha-pos="add-snack">Add</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="creditCardForm">
+        <div class="heading">
+            <h1>Checkout</h1>
+            <table id="checkout-cart" class="shopping-cart">
+                <thead>
+                    <tr>
+                        <th class="item-title" scope="col">Item</th>
+                        <th class="price-title" scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody id="input-checkout">
+
+                </tbody>
+            </table>
+            <div id="pricing">
+                <p id="sub-total">
+                    <strong>Total</strong>: <span id="stotal"></span>
+                </p>
+            </div>
+        </div>
+        <div class="payment">
+            <h1>Confirm Purchase</h1>
+            <form>
+                <div class="form-group owner">
+                    <label for="owner">Owner</label>
+                    <input type="text" class="form-control" id="owner">
+                </div>
+                <div class="form-group CVV">
+                    <label for="cvv">CVV</label>
+                    <input type="text" class="form-control" id="cvv">
+                </div>
+                <div class="form-group" id="card-number-field">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" class="form-control" id="cardNumber">
+                </div>
+                <div class="form-group" id="expiration-date">
+                    <label>Expiration Date</label>
+                    <select>
+                        <option value="01">January</option>
+                        <option value="02">February </option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <select>
+                        <option value="16"> 2016</option>
+                        <option value="17"> 2017</option>
+                        <option value="18"> 2018</option>
+                        <option value="19"> 2019</option>
+                        <option value="20"> 2020</option>
+                        <option value="21"> 2021</option>
+                    </select>
+                </div>
+                <div class="form-group" id="credit_cards">
+                    <img src="images/visa.jpg" id="visa">
+                    <img src="images/mastercard.jpg" id="mastercard">
+                    <img src="images/amex.jpg" id="amex">
+                </div>
+                <div class="form-group" id="pay-now">
+                    <button type="submit" class="btn btn-default" id="confirm-purchase">Confirm</button>
+                </div>
+                <div class="form-group" id="cancel-now">
+                    <button type="button" class="btn btn-default" id="cancel-purchase">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- import jquery and bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="js/jquery.payform.min.js" charset="utf-8"></script>
+    <!-- import AlphaPos JavaScript -->
+    <script src="js/payform.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
