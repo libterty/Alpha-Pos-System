@@ -1,4 +1,4 @@
-# alpha-pos
+# User-Pos-System
 
 A single web application for user POS sysytem
 
