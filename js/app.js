@@ -84,39 +84,39 @@ AlphaPos.prototype.getCheckedValue = function(inputName) {
 
 AlphaPos.prototype.addDrink = function(drink) {
     let orderListsCard = `
-    <div class="card mb-3">
-    <div class="card-body pt-3 pr-3">
-      <div class="text-right">
-        <span data-alpha-pos="delete-item">×</span>
-      </div>
-      <h6 class="card-title mb-1">${drink.name}</h6>
-      <div class="card-text">${drink.ice}</div>
-      <div class="card-text">${drink.sugar}</div>
-    </div>
-    <div class="card-footer text-right py-2">
-      <div class="card-text text-muted">$ <span data-item-price>${drink.price()}</span></div>
-    </div>
-  </div>
-  `;
+        <div class="card mb-3">
+            <div class="card-body pt-3 pr-3">
+                <div class="text-right">
+                    <span data-alpha-pos="delete-item">×</span>
+                </div>
+                <h6 class="card-title mb-1">${drink.name}</h6>
+                <div class="card-text">${drink.ice}</div>
+                <div class="card-text">${drink.sugar}</div>
+            </div>
+            <div class="card-footer text-right py-2">
+                <div class="card-text text-muted">$ <span data-item-price>${drink.price()}</span></div>
+            </div>
+        </div>
+        `;
 
     orderLists.insertAdjacentHTML('afterbegin', orderListsCard);
 };
 
 AlphaPos.prototype.addSnack = function(snack) {
     let orderListsCard = `
-    <div class="card mb-3">
-    <div class="card-body pt-3 pr-3">
-      <div class="text-right">
-        <span data-alpha-pos="delete-item">×</span>
-      </div>
-      <h6 class="card-title mb-1">${snack.snack}</h6>
-      <div class="card-text">${snack.spicy}</div>
-    </div>
-    <div class="card-footer text-right py-2">
-      <div class="card-text text-muted">$ <span data-item-price>${snack.price()}</span></div>
-    </div>
-  </div>
-  `;
+        <div class="card mb-3">
+            <div class="card-body pt-3 pr-3">
+                <div class="text-right">
+                    <span data-alpha-pos="delete-item">×</span>
+                </div>
+                <h6 class="card-title mb-1">${snack.snack}</h6>
+                <div class="card-text">${snack.spicy}</div>
+            </div>
+            <div class="card-footer text-right py-2">
+                <div class="card-text text-muted">$ <span data-item-price>${snack.price()}</span></div>
+            </div>
+        </div>
+    `;
 
     orderLists.insertAdjacentHTML('afterbegin', orderListsCard);
 };
@@ -160,7 +160,7 @@ AlphaPos.prototype.generateBillContent = function() {
         checkoutFormDetail.innerHTML = htmlContent;
     }
     document.getElementById('stotal').textContent = alphaPos.checkout();
-}
+};
 
 AlphaPos.prototype.cancelBill = function() {
     switchCategoryBtn.classList.remove('deactivatecontainer');
